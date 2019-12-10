@@ -1,11 +1,16 @@
-import React from 'react';
-//import { useForm } from '../hooks/useForm';
+import React, { useState } from 'react';
 
 const ToDoForm = ( { handleSubmit }) => {
-    //const [todoInput, handleChanges, handleSubmit] = useForm('');
+   const [todoInput, setTodoInput] = useState('');
+
+   const handleChanges = e => {
+       setTodoInput(e.target.value);
+   }
     
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={() => {
+            handleSubmit();
+        }}>
             <label htmlFor='todo'>Add something else for Katniss to do:</label>
             <input name='todo'
                 id='todo'
