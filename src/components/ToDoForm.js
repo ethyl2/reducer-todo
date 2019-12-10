@@ -8,12 +8,12 @@ const ToDoForm = ( { handleSubmit }) => {
    }
     
     return (
-        <form onSubmit={() => {
-            handleSubmit();
-        }}>
+        <form onSubmit={handleSubmit}>
             <label htmlFor='todo'>Add something else for Katniss to do:</label>
             <input name='todo'
                 id='todo'
+                value={todoInput}
+                onChange={handleChanges}
                 >
             </input>
             <button type='submit'>Submit</button>
