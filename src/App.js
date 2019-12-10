@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ToDos from './components/ToDos';
 import ToDoForm from './components/ToDoForm';
+import arrow from './arrow.png';
 
 import { reducer, initialState } from './reducers/reducer';
 
@@ -11,8 +12,21 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleSubmit = e => {
+    e.preventDefault();
     console.log('in handleSubmit');
     dispatch({type: 'ADD', payload: e.target.todo.value});
+  }
+
+  const toggleCompleted = (event, id) => {
+    event.target.classList.toggle('completed');
+    dispatch({type: 'TOGGLE', payload: id});
+    if (event.target.classList.contains('completed')) {
+      const todoEl = document.getElementById(id);
+      const node = document.createElement('img');
+      node.classList.add('arrow');
+      node.src = arrow;
+      todoEl.prepend(node);
+    }
   }
 
   return (
@@ -25,8 +39,8 @@ function App() {
         </h1>
 
       </header>
-      <ToDoForm handleSubmit={handleSubmit}/>
-      <ToDos todos={state}/>
+      <ToDoForm handleSubmit={handleSubmit} />
+      <ToDos todos={state} toggleCompleted={toggleCompleted}/>
       
     </div>
   );

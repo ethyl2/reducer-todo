@@ -1,3 +1,5 @@
+
+
 export const initialState = [{
     item: 'Improve my bow and arrow skills',
     completed: false,
@@ -25,7 +27,15 @@ export const initialState = [{
 export const reducer = (state, action)=> {
     switch(action.type) {
         case 'ADD':
-            return [...state, {item: action.payload, completed: false, id: Date.now()}]
+            return [...state, {item: action.payload, completed: false, id: Date.now()}];
+        case 'TOGGLE':
+            return state.map(todo => {
+                if (todo.id === action.payload) {
+                    return {...todo, completed: !(todo.completed)};
+                } else {
+                    return todo;
+                }
+            });
         default:
             return state;
     }
