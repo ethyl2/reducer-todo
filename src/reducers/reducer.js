@@ -17,8 +17,18 @@ export const initialState = [{
     id: 789095837849
     },
     {
+    item: 'Stay alive',
+    completed: false,
+    id: 12345678
+    },
+    {
+    item: 'Sleep in a tree',
+    completed: false,
+    id: 789087358
+    },
+    {
     item: 'Win the Hunger Games',
-    completed: true,
+    completed: false,
     id: 789384738988
     }
 ]
@@ -36,6 +46,8 @@ export const reducer = (state, action)=> {
                     return todo;
                 }
             });
+        case 'CLEAR':
+            return state.filter(todo => !todo.completed);
         default:
             return state;
     }

@@ -48,6 +48,11 @@
   color: white;
   margin: 0.5rem;
   width: 30%;
+  transition: all 0.2s;
+}
+
+.todoBox:hover {
+  transform: scale(1.2);
 }
 
 .completed {
