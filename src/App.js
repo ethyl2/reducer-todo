@@ -23,14 +23,29 @@ function App() {
   const toggleCompleted = (event, id) => {
     event.target.classList.toggle('completed');
     dispatch({type: 'TOGGLE', payload: id});
+    const todoEl = document.getElementById(id);
+
+    //Remove arrow and date if present
+    const arrowEl = document.getElementById(`arrow${id}`);
+    const timeEl = document.getElementById(`time${id}`);
+    if (arrowEl) {
+      todoEl.removeChild(arrowEl);
+    }
+    if (timeEl) {
+      todoEl.removeChild(timeEl);
+    }
+    
+    // Otherwise, add arrow and date completed
     if (event.target.classList.contains('completed')) {
-      const todoEl = document.getElementById(id);
+      
       const node = document.createElement('img');
       node.classList.add('arrow');
+      node.id = `arrow${id}`;
       node.src = arrow;
       todoEl.prepend(node);
       const timeStamp = moment().calendar();
       const timeNode = document.createElement('p');
+      timeNode.id = `time${id}`;
       timeNode.textContent= `Completed: ${timeStamp}`;
       
       todoEl.appendChild(timeNode);
