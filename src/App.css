@@ -37,7 +37,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: stretch;
+  align-items: center;
   justify-items: center;
   margin-top: 2rem;
 }
@@ -49,6 +49,10 @@
   margin: 0.5rem;
   width: 30%;
   transition: all 0.2s;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .todoBox:hover {
@@ -56,10 +60,12 @@
 }
 
 .completed {
-  text-decoration: line-through;
   font-style: italic;
+  color:#D48120;
 }
 
 .arrow {
   width: 4rem;
+  display: block;
+  margin: 0.5rem auto;
 }

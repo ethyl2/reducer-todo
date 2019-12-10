@@ -5,12 +5,14 @@ import ToDos from './components/ToDos';
 import ToDoForm from './components/ToDoForm';
 import Footer from './components/Footer';
 import arrow from './arrow.png';
+import moment from 'moment';
 
 import { reducer, initialState } from './reducers/reducer';
 
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const today = moment();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,6 +29,11 @@ function App() {
       node.classList.add('arrow');
       node.src = arrow;
       todoEl.prepend(node);
+      const timeStamp = moment().calendar();
+      const timeNode = document.createElement('p');
+      timeNode.textContent= `Completed: ${timeStamp}`;
+      
+      todoEl.appendChild(timeNode);
     }
   }
 
@@ -42,6 +49,7 @@ function App() {
         <h1>
           Katniss Everdeen's Todo List
         </h1>
+        <h2>{today.format("dddd, MMMM Do YYYY, h:mm:ss a")}</h2>
 
       </header>
       <ToDoForm handleSubmit={handleSubmit} />
