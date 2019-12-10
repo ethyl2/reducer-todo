@@ -32,3 +32,24 @@ h2 {
   letter-spacing: 0.15rem;
   font-size: 2rem;
 }
+
+form {
+  background: rgba(48, 55, 73, 0.8);
+  padding: 1rem;
+  color: white;
+  margin: 1.5rem;
+}
+
+input {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+label {
+  font-size: 2rem;
+}
+
+button {
+  font-size: 2rem;
+  padding: 0.5rem;
+}

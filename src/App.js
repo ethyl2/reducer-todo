@@ -2,12 +2,18 @@ import React, {useReducer} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ToDos from './components/ToDos';
-import Katniss from './katniss.jpg';
+import ToDoForm from './components/ToDoForm';
+
 import { reducer, initialState } from './reducers/reducer';
 
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleSubmit = e => {
+    console.log('in handleSubmit');
+    dispatch({type: 'ADD', payload: e.target.todo.value});
+  }
 
   return (
     <div className="App">
@@ -19,6 +25,7 @@ function App() {
         </h1>
 
       </header>
+      <ToDoForm handleSubmit={handleSubmit}/>
       <ToDos todos={state}/>
       
     </div>
