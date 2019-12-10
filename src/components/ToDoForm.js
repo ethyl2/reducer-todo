@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ToDoForm = ( { handleSubmit }) => {
-   const [todoInput, setTodoInput] = useState('');
+const ToDoForm = ( { handleSubmit, handleChanges, todoInput }) => {
+   //const [todoInput, setTodoInput] = useState('');
 
-   const handleChanges = e => {
+   /*const handleChanges = e => {
        setTodoInput(e.target.value);
    }
+   */
     
     return (
         <form onSubmit={handleSubmit}>

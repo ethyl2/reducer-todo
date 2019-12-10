@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ToDos from './components/ToDos';
@@ -13,11 +13,17 @@ import { reducer, initialState } from './reducers/reducer';
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const today = moment();
+  const [todoInput, setTodoInput] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
     console.log('in handleSubmit');
     dispatch({type: 'ADD', payload: e.target.todo.value});
+    setTodoInput('');
+  }
+
+  const handleChanges = e => {
+    setTodoInput(e.target.value);
   }
 
   const toggleCompleted = (event, id) => {
@@ -67,7 +73,7 @@ function App() {
         <h2>{today.format("dddd, MMMM Do YYYY, h:mm:ss a")}</h2>
 
       </header>
-      <ToDoForm handleSubmit={handleSubmit} />
+      <ToDoForm handleSubmit={handleSubmit} handleChanges={handleChanges} todoInput={todoInput} />
       <ToDos todos={state} toggleCompleted={toggleCompleted}/>
       <button onClick={clearCompleted}>Clear Completed Tasks</button>
       <Footer />
