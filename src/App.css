@@ -69,3 +69,11 @@
   display: block;
   margin: 0.5rem auto;
 }
+
+.footer-misc {
+  margin-top: 1rem;
+}
+
+.footer-misc p {
+  margin-top: 1rem;
+}

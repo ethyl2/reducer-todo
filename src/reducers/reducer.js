@@ -27,10 +27,26 @@ export const initialState = [{
     id: 789087358
     },
     {
+    item: 'Feed poisonous berries to enemies',
+    completed: false,
+    id: 9876544234
+    },
+    {
+    item: 'Sing a lullaby in Rue\'s memory',
+    completed: false,
+    id: 1234568974   
+    },
+    {
     item: 'Win the Hunger Games',
     completed: false,
     id: 789384738988
+    },
+    {
+    item: 'Defeat President Snow',
+    completed: false,
+    id: 756748375284
     }
+
 ]
 
 
