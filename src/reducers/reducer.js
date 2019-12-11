@@ -6,7 +6,7 @@ export const initialState = [{
     id: 3892987589
     },
     {
-    item: 'Decide between Petra and Gale',
+    item: 'Decide between Peeta and Gale',
     completed: false,
     id: 87893487489    
     }
