@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  pointer-events: none;
+  width: 4rem;
+  margin: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.todosBox {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.todoBox {
+  background: rgba(48, 55, 73, 0.8);
+  padding: 1rem;
+  color: white;
+  margin: 0.5rem;
+  width: 30%;
+  transition: all 0.2s;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoBox:hover {
+  transform: scale(1.2);
+}
+
+.completed {
+  font-style: italic;
+  color:#D48120;
+}
+
+.arrow {
+  width: 4rem;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+.footer-misc {
+  margin-top: 1rem;
+}
+
+.footer-misc p {
+  margin-top: 1rem;
+}
