@@ -2,7 +2,7 @@
 
 This project is deployed at http://katniss-todo.surge.sh/
 
-It uses the reducer pattern for state management, with thee useReducer() hook.
+It uses the reducer pattern for state management, with the useReducer() hook.
 
 -----------------------------
 
