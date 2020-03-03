@@ -1,3 +1,11 @@
+# Katniss' Todo App
+
+This project is deployed at http://katniss-todo.surge.sh/
+
+It uses the reducer pattern for state management, with thee useReducer() hook.
+
+-----------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
